@@ -25,9 +25,7 @@
 [v _lcd_send_string lcd_send_string `(v  1 e 1 0 ]
 "89
 [v _lcd_clear lcd_clear `(v  1 e 1 0 ]
-"108
-[v _lcd_out lcd_out `(v  1 e 1 0 ]
-"131
+"112
 [v _main main `(v  1 e 1 0 ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -53,43 +51,14 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3447
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"131 Z:\Projects\KK\LCD.X\main_LCD.c
+"112 Z:\Projects\KK\LCD.X\main_LCD.c
 [v _main main `(v  1 e 1 0 ]
 {
-"136
-[v main@text3 text3 `[17]uc  1 a 17 38 ]
-"135
-[v main@text2 text2 `[17]uc  1 a 17 21 ]
-"134
-[v main@text1 text1 `[17]uc  1 a 17 4 ]
-"133
-[v main@text text `[2]uc  1 a 2 56 ]
-"132
-[v main@i i `uc  1 a 1 55 ]
-[v main@F1692 F1692 `[2]uc  1 s 2 F1692 ]
-"133
-[v main@F1694 F1694 `[17]uc  1 s 17 F1694 ]
-"134
-[v main@F1696 F1696 `[17]uc  1 s 17 F1696 ]
-"135
-[v main@F1698 F1698 `[17]uc  1 s 17 F1698 ]
-"172
-} 0
-"108
-[v _lcd_out lcd_out `(v  1 e 1 0 ]
-{
-[v lcd_out@row row `uc  1 a 1 wreg ]
-"110
-[v lcd_out@position position `uc  1 a 1 10 ]
-[v lcd_out@result result `uc  1 a 1 9 ]
-"108
-[v lcd_out@row row `uc  1 a 1 wreg ]
-[v lcd_out@column column `uc  1 p 1 5 ]
-[v lcd_out@str str `*.4uc  1 p 1 6 ]
-[v lcd_out@length length `uc  1 p 1 7 ]
-"110
-[v lcd_out@row row `uc  1 a 1 11 ]
-"122
+"113
+[v main@text text `[12]uc  1 a 12 0 ]
+"112
+[v main@F1683 F1683 `[12]uc  1 s 12 F1683 ]
+"128
 } 0
 "84
 [v _lcd_send_string lcd_send_string `(v  1 e 1 0 ]

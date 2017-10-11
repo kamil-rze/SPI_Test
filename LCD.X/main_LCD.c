@@ -89,11 +89,36 @@ void lcd_send_string(unsigned char *str, char length)
 void lcd_clear()
 {
     lcd_cmd(0x01);
+    __delay_us(1200);
 }
 
 void lcd_return_home()
 {
     lcd_cmd(0x02);
+}
+
+char lcd_cursor_position(unsigned char position)
+{
+    char result = 1;
+    if (position >= 0 && position <= 80) lcd_cmd(position + 0x80);
+    else result = 0;
+    return result;
+}
+
+void lcd_out(unsigned char row, unsigned char column, unsigned char *str, unsigned char length)
+{
+    char result = 1, position = 0;
+    
+    if(row >= 1 && row <= 4){
+        if(column >= 1 && column <=20){
+            if(row == 1) position = column;
+            else if (row == 2) position = 40 + column;
+            else if (row == 3) position = 20 + column;
+            else if (row == 4) position = 60 + column;
+            lcd_cmd(position + 0x80 - 1);                   // Set address
+        }
+    }
+    lcd_send_string(str, length);
 }
 
 void lcd_entry_mode_set(char inc, char shift)
@@ -104,11 +129,31 @@ void lcd_entry_mode_set(char inc, char shift)
 }
 
 void main(void) {
-    unsigned char text[] = "0123456789ABCDEFGHIJo123456789abcdefghij,123456789qwertyghij";
+    char i = 0;
+    unsigned char text[] = "L";
+    unsigned char text1[] = "L2 - Czesc Kuba!";
+    unsigned char text2[] = "L3 - Czesc Kuba!";
+    unsigned char text3[] = "L4 - Czesc Kuba!";
     Init();
     lcd_init();
-    lcd_send_string(text,60);    
-    __delay_ms(1500);
+    lcd_clear();
+    lcd_out(2,10,text,1);
+
+//    lcd_cursor_position(0x40);
+//    lcd_send_string(text1,16);    
+//    __delay_ms(1500);
+//    lcd_clear();
+//    lcd_cursor_position(0x14);
+//    lcd_send_string(text2,16);    
+//    __delay_ms(1500);
+//    lcd_clear();
+//    lcd_cursor_position(40);
+//    lcd_send_string(text3,16);    
+//    __delay_ms(1500);
+    
+   
+    
+    
 //    lcd_entry_mode_set(0,0);
 //    lcd_data(0x41); 
 //    lcd_data(0x42);
